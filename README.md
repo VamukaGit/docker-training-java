@@ -57,7 +57,13 @@ Cheatsheet
   
 	   docker images
 
+ To start, stop, and kill container
+ 	docker start {container_name}
+	docker stop {container_name}
+	docker kill {container_name}
+	
   To remove container
+  
   
 	   docker rm -f {container_name}
 	
