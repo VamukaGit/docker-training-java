@@ -241,7 +241,7 @@ Copy from Docker Container to Host machine:
 	   		docker cp data/ java8-app-c1:/data	
 	
      	Login to the docker container
-	   		docker exec -it java8-app-c1
+	   		docker exec -it java8-app-c1 sh
 	
      	Verify the file
 	   		ls -l data
@@ -249,6 +249,9 @@ Copy from Docker Container to Host machine:
 	
      	Run the file
 	   		sh run.sh
+	
+	Exit/Logou from Container 
+	 Ctl D or exit
 
 -------------
 Docker Compose
