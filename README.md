@@ -160,7 +160,8 @@ spring-boot
      Build the executable
      -------------
        cd spring-boot
-       ./mvnw package && java -jar target/spring-boot-demo-1.0.jar
+       ./mvnw package  or mvn clean package spring-boot:repackage
+       java -jar target/spring-boot-demo-1.0.jar
        
        Access the app using
            Windows: http://192.168.99.100:8085/greet?name=zama  (Get the IP using `docker-machine ip` command)
