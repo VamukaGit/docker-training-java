@@ -150,6 +150,8 @@ Standalone
           Java 11
                docker run --name java11-app-c1 java11-app		
 
+      Run as backgroud app 
+            docker run -d --name java8-app-c1 java8-app 
 
 -------------
 spring-boot
