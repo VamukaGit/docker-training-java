@@ -59,6 +59,8 @@ Cheatsheet
 
  To start, stop, and kill container
  
+ 	docker create {container_name}
+	
  	docker start {container_name}
 	
 	docker stop {container_name}
