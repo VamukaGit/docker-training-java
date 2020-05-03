@@ -183,7 +183,48 @@ spring-boot
            Windows: http://192.168.99.100:9999/greet?name=zama  (Get the IP using `docker-machine ip` command)
            Ubuntu : http://localhost:9999/greet?name=zama
 
-  
+
+https://www.ostechnix.com/explaining-docker-volumes-with-examples/
+
+Volumes are saved in the host filesystem (/var/lib/docker/volumes/devops_volume/_data) 
+
+// create a volume
+docker volume create new_vol
+
+// list volumes
+docker volume ls
+
+// inspect volumes
+docker volume inspect new_vol
+
+// removing volumes
+docker volume rm new_vol
+
+// removing all volumes
+docker volume prune
+
+
+docker volume create devops_volume
+-------------------- mount----------------
+docker container create --name <container_name> -it --mount source<volume_name>,target=/<folder_Name> <image_name>
+
+docker container create --name spring-boot-demo -it --mount source=devops_volume,target=/tmp spring-boot-demo
+
+docker container start spring-boot-demo
+
+docker exec -it spring-boot-demo sh
+
+echo "Hello World" >> host-hello.txt
+
+docker container cp host-hello.txt spring-boot-demo:/tmp
+-------------------- Volume----------------
+docker run -d -p9999:8085 -it --name spring-boot-demo spring-boot-demo -v /devops_volume:/tmp
+
+echo "Hello World" >> host-hello.txt
+
+docker container cp host-hello.txt spring-boot-demo:/tmp
+
+
 -------------
 Upload image to public registry (dockerhub)
 -------------
